@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Asset = () => {
   const [Post, setPosts] = useState([]);
 
   let getPosts = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((data) => data.json())
-      .then((data) => setPosts(data));
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => setPosts(res.data));
   };
 
   useEffect(() => {
