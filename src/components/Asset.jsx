@@ -5,13 +5,13 @@ const Asset = () => {
   const [posts, setPosts] = useState([]);
 
   const getPost = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((data) => data.json())
-      .then((data) => setPosts(data));
+    // fetch("https://jsonplaceholder.typicode.com/posts")
+    //   .then((data) => data.json())
+    //   .then((data) => setPosts(data));
     // Or
-    // axios
-    //   .get("https://jsonplaceholder.typicode.com/posts")
-    //   .then((res) => setPosts(res.data));
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => setPosts(res.data));
   };
 
   useEffect(() => {
